@@ -1,0 +1,123 @@
+/* General Layout */
+.dashboard {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard-header {
+    background-color: #fff;
+    color: #333;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidenav-toggle {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  
+  .header-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Body layout */
+  .dashboard-body {
+    display: flex;
+    flex: 1;
+    transition: margin-left 0.3s ease; /* Smooth transition for content */
+  }
+  
+  .dashboard-sidenav {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+    position: fixed;
+    top: 105px; /* Moved down by 105px */
+    left: -250px;
+    bottom: 0;
+    transition: left 0.3s ease;
+  }
+  
+  .dashboard-sidenav.open {
+    left: 0; /* Show SideNav when open */
+  }
+  
+  .dashboard-sidenav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .dashboard-sidenav li {
+    margin: 1rem 0;
+  }
+  
+  .dashboard-sidenav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    display: block;
+    padding: 8px;
+  }
+  
+  .dashboard-main {
+    flex: 1;
+    padding: 2rem;
+    overflow: auto;
+    transition: margin-left 0.3s ease; /* Smooth transition for main content */
+    margin-left: 0; /* No margin when side nav is closed */
+    margin-top: 105px; /* Moved down by 105px to match the SideNav position */
+  }
+  
+  .dashboard-body.sidenav-open .dashboard-main {
+    margin-left: 250px; /* Shift content when side nav is open */
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .dashboard-sidenav {
+      width: 200px;
+      left: -200px;
+    }
+  
+    .dashboard-body.sidenav-open .dashboard-sidenav {
+      left: 0;
+    }
+  
+    .dashboard-body.sidenav-open .dashboard-main {
+      margin-left: 200px; /* Shift content on mobile */
+    }
+  }
+  

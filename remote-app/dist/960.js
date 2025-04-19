@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkremote_app=self.webpackChunkremote_app||[]).push([[960],{960:(e,t,r)=>{r.r(t),r.d(t,{default:()=>l});var n=r(769),a=r.n(n);const l=function(){return a().createElement("h2",null,"Hello from Remote Header!")}}}]);
